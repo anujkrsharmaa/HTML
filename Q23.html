@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find HCF or GCD</title>
+</head>
+<body>
+    <h1>JavaScript Program to Find HCF or GCD</h1>
+    <p>Open the console to see the result.</p>
+    <script>
+        function findHCF(a, b) {
+            while (b != 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        // Example usage
+        let num1 = 56;
+        let num2 = 98;
+        console.log(`HCF of ${num1} and ${num2} is ${findHCF(num1, num2)}`);
+    </script>
+</body>
+</html>

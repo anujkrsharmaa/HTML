@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Sequence</title>
+</head>
+<body>
+  <h2>Fibonacci Sequence (Recursion)</h2>
+  <input type="number" id="count" placeholder="Enter number of terms">
+  <button onclick="displayFibonacci()">Generate</button>
+  <p id="result"></p>
+
+  <script>
+    function fibonacci(n) {
+      if (n <= 1) return n;
+      return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    function displayFibonacci() {
+      const count = parseInt(document.getElementById("count").value);
+      let sequence = [];
+      for (let i = 0; i < count; i++) {
+        sequence.push(fibonacci(i));
+      }
+      document.getElementById("result").textContent = sequence.join(', ');
+    }
+  </script>
+</body>
+</html>

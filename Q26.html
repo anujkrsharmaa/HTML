@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Natural Numbers (Recursion)</title>
+</head>
+<body>
+  <h2>Find Sum of Natural Numbers Using Recursion</h2>
+  
+  <label for="number">Enter a natural number:</label>
+  <input type="number" id="number" min="1">
+  <button onclick="calculateSum()">Calculate</button>
+  
+  <p id="result"></p>
+
+  <script>
+    // Recursive function to find the sum of natural numbers
+    function sum(n) {
+      if (n <= 1) {
+        return n;
+      } else {
+        return n + sum(n - 1);
+      }
+    }
+
+    function calculateSum() {
+      const input = document.getElementById("number").value;
+      const num = parseInt(input);
+
+      if (isNaN(num) || num < 1) {
+        document.getElementById("result").innerText = "Please enter a valid natural number (1 or greater).";
+        return;
+      }
+
+      const result = sum(num);
+      document.getElementById("result").innerText = `Sum of first ${num} natural numbers is ${result}.`;
+    }
+  </script>
+</body>
+</html>

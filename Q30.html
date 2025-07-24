@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factorial Using Recursion</title>
+</head>
+<body>
+  <h2>Factorial of a Number (Recursion)</h2>
+  <input type="number" id="number" placeholder="Enter a number">
+  <button onclick="findFactorial()">Calculate Factorial</button>
+  <p id="result"></p>
+
+  <script>
+    function factorial(n) {
+      if (n <= 1) return 1; // Base case: factorial of 1 or 0 is 1
+      return n * factorial(n - 1); // Recursive case
+    }
+
+    function findFactorial() {
+      const number = parseInt(document.getElementById("number").value);
+      const result = factorial(number);
+      document.getElementById("result").textContent = `Factorial: ${result}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Same Last Digit</title>
+</head>
+<body>
+    <h1>Check if Numbers Have the Same Last Digit</h1>
+    <p>Enter two numbers to check if they have the same last digit:</p>
+    <form id="numberForm">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" required>
+        <br><br>
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" required>
+        <br><br>
+        <button type="button" onclick="checkLastDigit()">Check</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function checkLastDigit() {
+            const num1 = parseInt(document.getElementById('num1').value);
+            const num2 = parseInt(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            const lastDigit1 = num1 % 10;
+            const lastDigit2 = num2 % 10;
+
+            if (lastDigit1 === lastDigit2) {
+                document.getElementById('result').textContent = "Yes, the numbers have the same last digit.";
+            } else {
+                document.getElementById('result').textContent = "No, the numbers do not have the same last digit.";
+            }
+        }
+    </script>
+</body>
+</html>

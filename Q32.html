@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal to Binary Converter</title>
+</head>
+<body>
+    <h1>JavaScript Program to Convert Decimal to Binary</h1>
+    <label for="decimal">Enter a Decimal Number:</label>
+    <input type="number" id="decimal" />
+    <button onclick="convertToBinary()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertToBinary() {
+            const decimal = document.getElementById('decimal').value;
+            if (decimal === '') {
+                document.getElementById('result').innerText = 'Please enter a number.';
+                return;
+            }
+            const binary = parseInt(decimal, 10).toString(2);
+            document.getElementById('result').innerText = `Binary: ${binary}`;
+        }
+    </script>
+</body>
+</html>

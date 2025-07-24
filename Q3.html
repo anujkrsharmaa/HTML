@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Root Calculator</title>
+</head>
+<body>
+    <h1>Square Root Calculator</h1>
+    <p>Enter a number to find its square root:</p>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="findSquareRoot()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function findSquareRoot() {
+            const number = parseFloat(document.getElementById('numberInput').value);
+            if (isNaN(number) || number < 0) {
+                document.getElementById('result').innerText = "Please enter a valid non-negative number.";
+            } else {
+                const squareRoot = Math.sqrt(number);
+                document.getElementById('result').innerText = `The square root of ${number} is ${squareRoot}.`;
+            }
+        }
+    </script>
+</body>
+</html>
